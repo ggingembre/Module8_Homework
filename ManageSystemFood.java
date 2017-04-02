@@ -55,5 +55,18 @@ public class ManageSystemFood implements IManageSystem<Food> {
         return new ArrayList<>( database.values ( ) );
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder ( "The database contains the following entries=\n" );
+        for ( Map.Entry <Food, Double> database : database.entrySet ( ) )
+            sb.append("Product: ").append ( database.getKey ( ) ).append ( " Price: " ).
+                    append ( database.getValue ( ) ).append ( "\n" );
+        return sb.toString ( );
+    }
+
+    public String printDatabase () {
+        return toString ( );
+    }
+
 
 }
