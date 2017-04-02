@@ -3,7 +3,7 @@
  */
 public class Food {
 
-    private String id;
+    private long id;
     private String name;
     private Country country;
     private int expiration;
@@ -22,19 +22,16 @@ public class Food {
 
         Food food = (Food) o;
 
-        return id.equals(food.id);
+        return id == (food.id);
     }
 
     @Override
     public int hashCode() {
-        return id.hashCode();
+        return (int) (id ^ (id >>> 32));
     }
 
-
     // get and set methods
-
-
-    public String getId() {
+    public long getId() {
         return id;
     }
 
