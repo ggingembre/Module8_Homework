@@ -69,4 +69,22 @@ public class ManageSystemFood implements IManageSystem<Food> {
     }
 
 
+    // sorting the database:
+
+    @Override
+    public void printProductsSortedByName () {
+        Map <Food, Double> sortedByNameDatabase = new TreeMap <> ( ( o1, o2 ) -> o1.getName ( ).compareTo ( o2.getName ( ) ) );
+        sortedByNameDatabase.putAll ( database );
+        System.out.println ( "Products sorted by name:" + sortedByNameDatabase );
+    }
+
+    @Override
+    public void printProductsSortedByPrice () {
+        List <Map.Entry <Food, Double>> sortedByPriceDatabase = new ArrayList <> ( database.entrySet ( ) );
+        sortedByPriceDatabase.sort ((o1,o2) -> o1.getValue().compareTo(o2.getValue()));
+        System.out.println ( "Products sorted by price:" );
+        for ( Map.Entry <Food, Double> entry : sortedByPriceDatabase )
+            System.out.println ( entry.getKey ( ).toString ( ) + " Price: " + entry.getValue ( ) );
+    }
+
 }

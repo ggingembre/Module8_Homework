@@ -51,6 +51,10 @@ public class Main {
         testshop.deleteById(5);
         System.out.println(testshop);
 
+        System.out.println("Now testing sorting functions, by name and by price:");
+        testshop.printProductsSortedByName();
+        testshop.printProductsSortedByPrice();
+
 
 
 
