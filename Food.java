@@ -13,6 +13,16 @@ public class Food {
     Товары считаются одинаковыми, если их id одинаковы. Переопределите методы hashCode и equals соответственно.
     */
 
+    // constructor with all fields
+
+    public Food(String name, Country country, int expiration) {
+        setId();
+        this.name = name;
+        this.country = country;
+        this.expiration = expiration;
+    }
+
+
     // hash and equal methods
 
     @Override
@@ -61,5 +71,14 @@ public class Food {
 
     public void setExpiration(int expiration) {
         this.expiration = expiration;
+    }
+
+    // print method
+
+
+    @Override
+    public String toString() {
+        return "ID: " + id + "; Product name: " + name + "; Country: " + country + "; Days to expiration: " + expiration
+                + ".";
     }
 }

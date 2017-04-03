@@ -57,9 +57,9 @@ public class ManageSystemFood implements IManageSystem<Food> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder ( "The database contains the following entries=\n" );
+        final StringBuilder sb = new StringBuilder ( "The database contains the following entries:\n" );
         for ( Map.Entry <Food, Double> database : database.entrySet ( ) )
-            sb.append("Product: ").append ( database.getKey ( ) ).append ( " Price: " ).
+            sb.append("Product ").append ( database.getKey ( ) ).append ( " Price: " ).
                     append ( database.getValue ( ) ).append ( "\n" );
         return sb.toString ( );
     }
